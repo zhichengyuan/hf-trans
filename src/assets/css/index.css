@@ -1,0 +1,730 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    background: rgb(240, 242, 245);
+}
+
+.wrapper{
+    width: auto;
+}
+.contionter{
+    height: 100vh;
+}
+
+.banner{
+    width: 100%;
+    height: 100%;
+    background: url('../image/bg.jpg') center center no-repeat;
+    background-size: cover;
+}
+.about{
+    width: 100%;
+    /* height: 100%; */
+    height: auto;
+    min-height: 100vh;
+}
+.about-height{
+    height: auto;
+    position: relative;
+}
+.about-height .quan{
+    position: absolute;
+    top: -209px;
+    right: 0;
+    width: 294px;
+    height: 422px;
+}
+.about-height .quan img{
+    width: 100%;
+    height: 100%;
+}
+
+.mengceng{
+    width: 100%;
+    height: 100%;
+    background: #1E1E1E;
+    opacity: 0.77;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    margin: 0 auto;
+    height: 66px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding: 0 30px;
+    display: flex;
+    justify-content:space-between;
+    z-index: 9999;
+    opacity: 0.77;
+}
+
+.header h2 {
+    line-height: 66px;
+    font-size: 48px;
+    cursor: pointer;
+    
+}
+.header h2 a{
+    display: inline-block;
+    width: 220px;
+    height: 60px;
+    background: url('../image/header.png') center center no-repeat;
+    background-size: 100%;
+    
+
+}
+.header h2 a:hover{
+    color:#000;text-decoration:none
+
+}
+.header .menu {
+    width: 60%;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+.header .menu a{
+    line-height: 66px;
+    /* flex:1;  */
+    width: 25%;
+    text-align: center;
+    font-family: PingFangSC-Medium, PingFang SC;
+}
+
+.center{
+    height:calc(100% - 66px);
+    position: relative;
+}
+.center p{
+    padding-left:50px ;
+}
+.center .title-box{
+    position: absolute;
+    width: 1000px;
+    /* height: 250px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: -50px;
+
+}
+.center .title-box .shopvill{
+    font-size: 80px;
+    font-family: Krungthep;
+    color: #FFFFFF;
+    line-height: 102px;
+}
+.center .title-box .title{
+    font-size: 72px;
+    color: #fff;
+    font-family: PingFangSC-Medium, PingFang SC;
+}
+
+.center .title-box .text-box{
+    font-size: 40px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #FF7327;
+    line-height: 56px;
+}
+
+/* 关于我们 */
+
+.about .main{
+    width: 100%;
+    /* height: 100%; */
+    box-sizing: border-box;
+    padding: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.about .main .img{
+    width: 585px;
+    height: 385px;
+}
+
+.about .main .detail{
+    flex: 1;
+    margin-left: 30px;
+}
+.about .main .detail .about-title h2{
+    width: 232px;
+    height: 78px;
+    font-size: 56px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #FF7327;
+    line-height: 78px;
+}
+.about .main .detail .about-title p{
+    width: 81px;
+    height: 28px;
+    font-size: 20px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #9C9C9C;
+    line-height: 28px;
+    margin-bottom: 50px;
+}
+.about .main .detail .about-detail span{
+    display: block;
+    width: 235px;
+    height: 42px;
+    font-size: 30px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #3E3E3E;
+    line-height: 42px;
+}
+.about .main .detail .about-detail .henggang{
+    width: 84px;
+    height: 6px;
+    background: #FF7327;
+    margin: 20px 0 40px 0;
+}
+.about .main .detail .about-detail .text{
+    
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #3E3E3E;
+    line-height: 31px;
+}
+
+/* 机会 */
+
+.opportunities{
+    width: 100%;
+    height: 1542px;
+    position: relative;
+    background: url('../image/bg3.jpg') center center no-repeat;
+    background-size: cover;
+}
+.opportunities .mengceng {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1E1E1E;
+    opacity: 0.79;
+    height: 1542px;
+    top: 0;
+}
+.opportunities .yinhao{
+    position: absolute;
+    top: -90px;
+    left: 1%;
+    z-index: 2;
+    height: 191px;
+    width: 333px;
+}
+.opportunities .main{
+    width: 100%;
+    height: 1542px;
+    position: relative;
+    /* background: #1E1E1E;
+    opacity: 0.79; */
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+
+    padding: 100px;
+    z-index: 3;
+}
+
+.opportunities .main .main-left .title{
+    margin-bottom: 100px;
+}
+
+.opportunities .main .main-left .title-z{
+    /* width: 232px; */
+    height: 65px;
+    font-size: 46px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 65px;
+}
+.opportunities .main .main-left .title-e{
+    /* width: 473px; */
+    height: 78px;
+    font-size: 56px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #FF7327;
+    line-height: 78px;
+}
+.opportunities .main .main-left .photo{
+    width: 459px;
+    height: 756px;
+    position: relative;
+}
+.opportunities .main .main-left .photo .photo-one{
+    width: 100%;
+    height: 100%;
+}
+.opportunities .main .main-left .photo .photo-one img{
+    width: 100%;
+    height: 100%;
+}
+
+.opportunities .main .text{
+    position: absolute;
+    box-sizing: border-box;
+    padding: 50px;
+    width: 333px;
+    height: 426px;
+    background: #FFFFFF;
+    box-shadow: 13px 12px 16px 0px rgba(0, 0, 0, 0.23);
+}
+.opportunities .main .text h3{
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #313131;
+    line-height: 27px;
+}
+.opportunities .main .text p{
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #313131;
+    line-height: 32px;
+}
+.opportunities .main .main-left .photo .text{
+    top: 232px;
+    left: -250px;
+}
+.opportunities .main .main-left .photo .text h3{
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #313131;
+    line-height: 27px;
+}
+.opportunities .main .main-left .photo .text p{
+    
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #313131;
+    line-height: 32px;
+}
+.opportunities .main .main-right {
+    position: relative;
+    height: 100%;
+    width: 379px;
+    margin-left: -20%;
+}
+.opportunities .main .main-right .photo-top {
+    position: absolute;
+    top: -188px;
+    left: 0;
+    width: 379px;
+    height: 600px;
+}
+
+.opportunities .main .main-right .photo-top img{
+    width: 379px;
+    height: 600px;
+    background: #FFFFFF;
+    box-shadow: 13px 12px 16px 0px rgba(0, 0, 0, 0.23);
+}
+
+
+.opportunities .main .main-right .photo-top .text{
+    top: 94px;
+    left: 270px;
+}
+
+.opportunities .main .main-right .photo-bottom {
+    position: absolute;
+    bottom: 188px;
+    left: 147px;
+    width: 340px;
+    height: 473px;
+}
+.opportunities .main .main-right .photo-bottom img{
+    width: 340px;
+    height: 473px;
+    box-shadow: 13px 12px 16px 0px rgba(0, 0, 0, 0.23);
+    opacity: 0.87;
+}
+
+.opportunities .main .photo-bottom .text{
+    top: 321px;
+    left: -173px;
+}
+
+/* 零售模式 */
+
+.lingshou{
+    width: 100%;
+    /* height: 100%; */
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 100px;
+    position: relative;
+    background: url('../image/bg4.jpg') no-repeat;
+    background-position:right center;
+    /* background-position:right; */
+}
+.lingshou .yuan1{
+    position: absolute;
+    top: 233px;
+    left: 0px;
+    width: 402px;
+    height: 804px;
+    z-index: -1;
+}
+.lingshou .yuan1 img{
+    width: 100%;
+    height: 100%;
+}
+.lingshou-height{
+    height: auto;
+    margin-bottom: 234px;
+}
+
+.lingshou .main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lingshou .main .title-t {
+    width: 412px;
+    height: 166px;
+    text-align: right;
+    font-size: 46px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #313131;
+    line-height: 83px;
+}
+
+.lingshou .main .content{
+    width: 508px;
+    height: 664px;
+    background: #FF8745;
+    box-shadow: 13px 12px 16px 0px rgba(0, 0, 0, 0.23);
+    opacity: 0.8;
+    margin-top: 60px;
+}
+
+.lingshou .main .content{
+    box-sizing: border-box;
+    padding: 50px;
+}
+.lingshou .main .content .title{
+    
+    font-size: 18px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 27px;
+    margin-bottom: 20px;
+}
+.lingshou .main .content .detail{
+    
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 30px;
+}
+
+.main-bottom{
+    /* width: 1065px; */
+    width: 900px;
+    height: 469px;
+    background: #FFFFFF;
+    box-shadow: 13px 12px 21px 0px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    padding:50px 100px;
+    margin-top: 30px;
+    margin-left: 164px;
+}
+.main-bottom .skip h2{
+    font-size: 20px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #313131;
+    line-height: 28px;
+    margin-bottom: 30px;
+    
+}
+
+.skip{
+    margin-bottom: 60px;
+}
+
+.skip-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.skip-box .skip-t{
+    text-align: center;
+}
+.skip-box .skip-t span{
+    display: block;
+}
+.skip-box .skip-t p{
+    text-align: center;
+}
+.skip-box .skip-t p span{
+    display: inline-block;
+}
+.skip-box .skip-t .text{
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #313131;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+.skip-box .skip-t .yuan{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    line-height: 40px;
+    background: #747772;
+    border-radius: 50%;
+}
+
+.skip .zhong-xian{
+    width: 100%;
+    height: 3px;
+    margin-top: -20px;
+    background: #747772;
+}
+
+
+
+.orgain .skip-t .yuan{
+    background: rgb(255, 115, 39);
+}
+.orgain .zhong-xian{
+    background: rgb(255, 115, 39);
+}
+
+/* 特权部分 */
+
+.tequan{
+    height: 1020px;
+    background: url('../image/bg1.png') center center no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: PingFangSC-Medium, PingFang SC;
+}
+.tequan .bian{
+    position: absolute;
+    top: 250px;
+    left: 0;
+    height: 1592px;
+    width: 203px;
+}
+/* .tequan img{
+    width: 100%;
+    height: 100%;
+} */
+.tequan .img{
+    position: absolute;
+    top: -162px;
+    left: 7%;
+    width:1090px;
+    height: 627px;
+    z-index: 1;
+}
+.tequan img{
+    width: 100%;
+    height: 100%;
+}
+.tequan .yinhao-img{
+    position: absolute;
+    top: -234px;
+    right: 4%;
+    width:238px;
+    height: 137px;
+}
+.tequan .detail{
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 800px;
+    /* height: 706px; */
+    background: #fff;
+    box-sizing: border-box;
+    padding: 50px;
+    z-index: 2;
+}
+
+.tequan .detail h2{
+    font-size: 20px;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+    color: #313131;
+    line-height: 28px;
+    margin-bottom: 40px;
+}
+
+.tequan .detail .detail-content{
+    display: flex;
+    flex-flow:row wrap;
+}
+.tequan .detail .detail-content .content{
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.tequan .detail .detail-content .content h3{
+    margin-bottom: 20px;
+}
+.tequan .detail .detail-content .content .xian{
+    width: 50px;
+    height: 4px;
+    background: #ccc;
+    margin-bottom: 20px;
+}
+
+.tequan .detail .detail-content .content p{
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    /* color: #FFFFFF; */
+    line-height: 30px;
+}
+
+.tequan .icon{
+    position: absolute;
+    bottom: -30px;
+    right: 31%;
+    width: 407px;
+    height: 407px;
+    border-radius: 50%;
+    z-index: 4;
+}
+
+/* <!-- 合伙人招募 --> */
+.partner{
+    height: auto;
+}
+
+.partner .partner-top{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    /* column-gap: 0em; */
+}
+/* .partner .partner-top .center{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+} */
+
+.partner .partner-top .partner-form{
+    /* position: absolute;
+    top: -120px; */
+    
+    width: 753px;
+    height: auto;
+    /* height: 530px; */
+    background-color: #fff;
+    z-index: 5;
+    /* font-family: PingFangSC-Medium, PingFang SC; */
+}
+.partner-form{
+    box-sizing: border-box;
+    padding: 50px 100px;
+    padding-bottom: 0;
+    margin-top: -120px;
+}
+.partner-form h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-family: PingFangSC-Medium, PingFang SC;
+}
+.partner-form .item{
+    margin-bottom: 30px;
+}
+.partner-form .item input ,.partner-form .item textarea{
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    line-height: 30px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+}
+
+.partner-form .item textarea{
+    height: 150px;
+}
+.partner-form  button{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: rgb(255, 115, 39);
+    color: #fff;
+    border: none;
+}
+.partner-top .welcome{
+    width: 644px;
+    height: 435px;
+    margin-top: 100px;
+}
+.partner-top .welcome img{
+    width: 100%;
+    height:  100%;
+}
+
+.partner .text div{
+    width: 898px;
+    height: 234px;
+    margin: 0 auto;
+}
+
+.partner .text div p{
+    font-size: 60px;
+    line-height: 65px;
+    line-height: 94px;
+    color: rgb(255, 115, 39);
+}
+.partner .text div .de{
+    text-align: right;
+    font-family: PingFangSC-Medium, PingFang SC;
+}
+
+/* 页面尾部 */
+.footer{
+    box-sizing: border-box;
+    padding: 100px;
+    padding-top: 50px;
+}
+
+.footer h2{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-family: PingFangSC-Medium, PingFang SC;
+}
+.footer .friend{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    height: 200px;
+    margin: 0 auto;
+}
+.footer img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
