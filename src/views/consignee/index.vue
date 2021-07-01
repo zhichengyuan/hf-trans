@@ -16,7 +16,7 @@
           v-model="time"
           value-format="yyyy-MM-dd"
           type="daterange"
-          range-separator="至"
+          range-separator="-"
           :start-placeholder="$t('message.开始日期')"
           :end-placeholder="$t('message.结束日期')">
           
@@ -41,61 +41,61 @@
     <div class="table-container">
       <el-table :data="list" style="width: 100%">
         <el-table-column
-          label="姓"
+          :label="$t('message.姓')"
           prop="recerNamePart1"
         ></el-table-column>
         <el-table-column
-          label='名'
+        :label="$t('message.名')"
           prop="recerNamePart2"
         ></el-table-column>
         <el-table-column
-          label='父姓'
+        :label="$t('message.父姓')"
           prop="recerNamePart3"
         ></el-table-column>
         <el-table-column
-          label='电话'
+        :label="$t('message.电话')"
           prop="recerPhone"
         ></el-table-column>
         <el-table-column
-          label='护照号'
+        :label="$t('message.护照号')"
           prop="passPortID"
         ></el-table-column>
         <el-table-column
-          label='护照类'
+          :label="$t('message.护照类')"
           prop="PassPortType"
         ></el-table-column>
         <el-table-column
-          label="签发日期"
+          :label="$t('message.签发日期')"
           prop="passPortDate"
         ></el-table-column>
         <el-table-column
-          label="生日"
+          :label="$t('message.生日')"
           prop="birthday"
         ></el-table-column>
         <el-table-column
-          label="州"
+          :label="$t('message.州')"
           prop="recerProvince"
         ></el-table-column>
         <el-table-column
-          label="城市"
+          :label="$t('message.城市')"
           prop="recerCity"
         ></el-table-column>
         <el-table-column
-          label="街道"
+          :label="$t('message.街道')"
           prop="recerAddr"
         ></el-table-column>
         <el-table-column
-          label="邮编"
+          :label="$t('message.邮编')"
           prop="recerZipCode"
         ></el-table-column>
         
         <el-table-column
         fixed="right"
-        label="操作"
+        :label="$t('message.操作')"
         width="100">
         <template slot-scope="scope">
-            <el-button @click="deleteConsignee(scope.row)" type="text" size="small">删除</el-button>
-            <el-button @click="editConsignee(scope.row)" type="text" size="small">编辑</el-button>
+            <el-button @click="deleteConsignee(scope.row)" type="text" size="small">{{ $t('message.删除') }}</el-button>
+            <el-button @click="editConsignee(scope.row)" type="text" size="small">{{ $t('message.编辑') }}</el-button>
         </template>
         </el-table-column>
       </el-table>
@@ -113,60 +113,60 @@
     </div>
     <!-- 弹窗 -->
     <el-dialog
-        title="提示"
+    :title="$t('message.提示')"
         :visible.sync="dialogVisible"
         width="70%"
         class="propClass"
         >
         <el-form :model="consignee" :rules="rules" ref="consignee" label-width="100px" class="demo-ruleForm consignee clearfix">
             <div class="consigneeLeft">
-                <el-form-item label="姓" prop="recerNamePart1">
+                <el-form-item :label="$t('message.姓')"  prop="recerNamePart1">
                     <el-input v-model="consignee.recerNamePart1"></el-input>
                 </el-form-item>
-                <el-form-item label="名" prop="recerNamePart2">
+                <el-form-item :label="$t('message.名')"  prop="recerNamePart2">
                     <el-input v-model="consignee.recerNamePart2"></el-input>
                 </el-form-item>
-                <el-form-item label="父姓" prop="recerNamePart3">
+                <el-form-item :label="$t('message.父姓')"  prop="recerNamePart3">
                     <el-input v-model="consignee.recerNamePart3"></el-input>
                 </el-form-item>
-                <el-form-item label="电话" prop="recerPhone">
+                <el-form-item :label="$t('message.电话')"  prop="recerPhone">
                     <el-input v-model="consignee.recerPhone"></el-input>
                 </el-form-item>
-                <el-form-item label="护照号" prop="passPortID">
+                <el-form-item :label="$t('message.护照号')" prop="passPortID">
                     <el-input v-model="consignee.passPortID"></el-input>
                 </el-form-item>
-                <el-form-item label="护照类型" prop="PassPortType">
+                <el-form-item :label="$t('message.护照类型')"  prop="PassPortType">
                     <el-input v-model="consignee.PassPortType"></el-input>
                 </el-form-item>
-                <el-form-item label="签发日期" prop="passPortDate">
-                    <el-date-picker type="date" value-format="yyyy-MM-dd" placeholder="选择日期" v-model="consignee.passPortDate" style="width: 100%;"></el-date-picker>
+                <el-form-item :label="$t('message.签发日期')"  prop="passPortDate">
+                    <el-date-picker type="date" value-format="yyyy-MM-dd" :placeholder="$t('message.选择日期')" v-model="consignee.passPortDate" style="width: 100%;"></el-date-picker>
                 </el-form-item>
             </div>
             <div class="consigneeRight">
-                <el-form-item label="税号" prop="eni">
+                <el-form-item :label="$t('message.税号')"  prop="eni">
                     <el-input v-model="consignee.eni"></el-input>
                 </el-form-item>
                 
-                <el-form-item label="生日" prop="birthday">
-                    <el-date-picker type="date" value-format="yyyy-MM-dd" placeholder="选择日期" v-model="consignee.birthday" style="width: 100%;"></el-date-picker>
+                <el-form-item :label="$t('message.生日')"  prop="birthday">
+                    <el-date-picker type="date" value-format="yyyy-MM-dd" :placeholder="$t('message.选择日期')" v-model="consignee.birthday" style="width: 100%;"></el-date-picker>
                 </el-form-item>
-                <el-form-item label="州" prop="recerProvince">
+                <el-form-item :label="$t('message.州')"  prop="recerProvince">
                     <el-input v-model="consignee.recerProvince"></el-input>
                 </el-form-item>
-                <el-form-item label="城市" prop="recerCity">
+                <el-form-item :label="$t('message.城市')"  prop="recerCity">
                     <el-input v-model="consignee.recerCity"></el-input>
                 </el-form-item>
-                <el-form-item label="街道" prop="recerAddr">
+                <el-form-item :label="$t('message.街道')"  prop="recerAddr">
                     <el-input v-model="consignee.recerAddr"></el-input>
                 </el-form-item>
-                <el-form-item label="邮编" prop="recerZipCode">
+                <el-form-item :label="$t('message.邮编')"  prop="recerZipCode">
                     <el-input v-model="consignee.recerZipCode"></el-input>
                 </el-form-item>
             </div>
             <div class="consigneeButton">
                 <el-form-item style="width:100%">
-                    <el-button type="primary" @click="submitForm('consignee')">保存</el-button>
-                    <el-button @click="resetForm('consignee')">取消</el-button>
+                    <el-button type="primary" @click="submitForm('consignee')">{{ $t('message.保存') }}</el-button>
+                    <el-button @click="resetForm('consignee')">{{ $t('message.取消') }}</el-button>
                 </el-form-item>
             </div>
         </el-form>
@@ -177,10 +177,10 @@
     title="提示"
     :visible.sync="dialogVisible1"
     width="30%">
-    <span>确认删除此联系人吗？</span>
+    <span>{{ $t('message.确认删除此联系人吗？') }}</span>
     <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible1 = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible1 = false">确 定</el-button>
+        <el-button @click="dialogVisible1 = false">{{ $t('message.取消') }}</el-button>
+        <el-button type="primary" @click="dialogVisible1 = false">{{ $t('message.确定') }}</el-button>
     </span>
     </el-dialog>
   </div>
@@ -236,43 +236,43 @@ export default {
       },
     rules: {
         recerNamePart1: [
-        { required: true, message: '请输入姓', trigger: 'blur' },
+        { required: true, message:this.$t('message.请输入姓'),  trigger: 'blur' },
         ],
         recerNamePart2: [
-        { required: true, message: '请输入名', trigger: 'blur' },
+        { required: true, message:this.$t('message.请输入名'),  trigger: 'blur' },
         ],
         recerNamePart3: [
-        { required: true, message: '请输入父姓', trigger: 'blur' },
+        { required: true, message:this.$t('message.请输入父姓'),  trigger: 'blur' },
         ],
         recerPhone: [
-            { required: true, message: '请输入电话', trigger: 'blur' },
+            { required: true, message:this.$t('message.请输入电话'),  trigger: 'blur' },
         ],
         passPortID: [
-            { required: true, message: '请输入护照号', trigger: 'blur' },
+            { required: true, message:this.$t('message.请输入护照号'),  trigger: 'blur' },
         ],
         PassPortType: [
-        { required: true, message: '请选择护照类型', trigger: 'change' }
+        { required: true, message:this.$t('message.请选择护照类型'),  trigger: 'change' }
         ],
         eni: [
-            { required: true, message: '请输入护照号', trigger: 'blur' },
+            { required: true, message:this.$t('message.请输入税号'),  trigger: 'blur' },
         ],
         passPortDate: [
-            { required: true, message: '请选择日期', trigger: 'change' }
+            { required: true, message:this.$t('message.请选择日期'),  trigger: 'change' }
         ],
         birthday: [
-            {required: true, message: '请选择日期', trigger: 'change' }
+            {required: true, message:this.$t('message.请选择日期'),  trigger: 'change' }
         ],
         recerProvince: [
-            { required: true, message: '请输入州', trigger: 'blur' },
+            { required: true, message:this.$t('message.请输入州'),  trigger: 'blur' },
         ],
         recerCity: [
-            { required: true, message: '请输入城市', trigger: 'blur' },
+            { required: true, message:this.$t('message.请输入城市'),  trigger: 'blur' },
         ],
         recerAddr: [
-            { required: true, message: '请输入街道地址', trigger: 'blur' },
+            { required: true, message:this.$t('message.请输入街道地址'),  trigger: 'blur' },
         ],
         recerZipCode: [
-            { required: true, message: '请输入邮编', trigger: 'blur' },
+            { required: true, message:this.$t('message.请输入邮编'),  trigger: 'blur' },
         ],
        
        
@@ -364,6 +364,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+/deep/.el-form-item__error{
+  position: relative;
+}
 .propClass{
     .consignee{
         .consigneeRight,.consigneeLeft,.consigneeButton{

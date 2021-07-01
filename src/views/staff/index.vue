@@ -116,7 +116,7 @@
           <el-tooltip
             class="item"
             effect="dark"
-            content="删除员工"
+            :content="$t('message.删除员工')"
             placement="top-start"
           >
             <el-button
@@ -210,7 +210,7 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="城市" prop="address">
+        <el-form-item :label="$t('message.城市')" prop="address">
           <el-input v-model="temp.address" />
         </el-form-item>
 

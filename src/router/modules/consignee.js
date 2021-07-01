@@ -8,7 +8,7 @@ const consigneeRouter = {
   redirect: 'noRedirect',
   name: 'consignee',
   meta: {
-    title: '收货人管理',
+    title: i18n.t('message.收货人管理'),
     icon: 'chart',
     roles: ['admin','b']
   },
@@ -18,7 +18,7 @@ const consigneeRouter = {
         import('@/views/consignee'),
       name: 'consigneeM',
       meta: {
-        title:'收货人列表',
+        title:i18n.t('message.收货人列表'),
         noCache: true,
         roles: ['admin','b']
       }

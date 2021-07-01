@@ -8,7 +8,7 @@ const staffRouter = {
   redirect: 'noRedirect',
   name: 'staff',
   meta: {
-    title:'人员管理',
+    title:i18n.t('message.人员管理'),
     icon: 'chart',
     roles: ['admin','B']
   },
@@ -18,7 +18,7 @@ const staffRouter = {
         import('@/views/staff'),
       name: 'staffM',
       meta: {
-        title:'人员列表',
+        title:i18n.t('message.人员列表'),
         noCache: true,
         roles: ['admin','B']
       }

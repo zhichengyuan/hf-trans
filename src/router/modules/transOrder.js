@@ -18,7 +18,7 @@ const transOrderRouter = {
         import('@/views/transOrder/addTransOrder'),
       name: 'addTransOrder',
       meta: {
-        title: '新增运单',
+        title: i18n.t('message.新增运单'),
         noCache: true,
         roles: ['admin','b']
       }

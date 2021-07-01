@@ -8,7 +8,7 @@ const execlOperateRouter = {
   redirect: 'noRedirect',
   name: 'execlOperate',
   meta: {
-    title: '文件操作',
+    title: i18n.t('message.文件操作'),
     icon: 'chart',
     roles: ['admin']
   },
@@ -18,7 +18,7 @@ const execlOperateRouter = {
         import('@/views/execlOperate'),
       name: 'execlOperateM',
       meta: {
-        title: '表格',
+        title: i18n.t('message.表格'),
         noCache: true,
         roles: ['admin']
       }

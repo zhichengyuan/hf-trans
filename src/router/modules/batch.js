@@ -8,7 +8,7 @@ const batchRouter = {
   redirect: 'noRedirect',
   name: 'batch',
   meta: {
-    title: '批次管理',
+    title:i18n.t('message.批次管理'),
     icon: 'chart',
     roles: ['admin']
   },
@@ -18,7 +18,7 @@ const batchRouter = {
         import('@/views/batch/batchList'),
       name: 'batchL',
       meta: {
-        title: '批次列表',
+        title:i18n.t('message.批次列表'),
         noCache: true,
         roles: ['admin']
       }

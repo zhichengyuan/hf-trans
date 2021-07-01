@@ -1,23 +1,23 @@
 <template>
   <div class="app-container">
        <el-tabs v-model="activeName" >
-            <el-tab-pane label="生成预报表" name="third">
+            <el-tab-pane :label="$t('message.生成预报表')" name="third">
                 <el-form
                     :inline="true"
                     :model="listQuery"
                     label-width="100px"
                     size="mini"
                 >
-                    <el-form-item label="客户" v-if="this.$store.state.user.companyMsg.roles.indexOf('b') == '-1'">
-                        <el-select v-model="userId" clearable placeholder="请选择客户">
+                    <el-form-item :label="$t('message.客户')" v-if="this.$store.state.user.companyMsg.roles.indexOf('b') == '-1'">
+                        <el-select v-model="userId" clearable :placeholder="$t('message.请选择客户')">
                         <el-option v-for="(item,index) in userlist" :key="index" :label="item.username" :value="item._id"></el-option>
                         </el-select>
                     </el-form-item>
 
-                    <el-button @click="dialogVisible = true" size="mini">生成华磊表</el-button>
+                    <el-button @click="dialogVisible = true" size="mini">{{$t('message.生成华磊表')}}</el-button>
                 </el-form>
             </el-tab-pane>
-            <el-tab-pane label="中国报关文件" name="fourth">
+            <el-tab-pane :label="$t('message.中国报关文件')" name="fourth">
                 <div class="block">
                     <el-upload
                       class="upload-demo"
@@ -32,18 +32,18 @@
                       :http-request="uploadVideo"
                     >
                       <template #trigger>
-                        <el-button size="small" type="primary">选取文件</el-button>
+                        <el-button size="small" type="primary">{{$t('message.选取文件')}}</el-button>
                         </template>
                         <el-button
                           type="primary"
                           style="margin-left: 10px;" size="small" 
                           @click="uploadVideo()"
-                          >生成中国报关文件</el-button
+                          >{{$t('message.生成中国报关文件')}}</el-button
                         >
                         <!-- <el-button  @click="submitUpload">生成中国报关文件</el-button> -->
                         <template #tip>
                         <div class="el-upload__tip">
-                            只能上传 excel 文件
+                          {{$t('message.只能上传excel文件')}}
                         </div>
                         </template>
                     </el-upload>
@@ -58,13 +58,13 @@
     
     <!-- 弹窗 -->
     <el-dialog
-    title="提示"
+    :title="$t('message.提示')"
     :visible.sync="dialogVisible"
     width="30%">
-    <span>确定导出华磊系统预报表？</span>
+    <span>{{$t('message.确定导出华磊系统预报表？')}}</span>
     <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="getHl">确 定</el-button>
+        <el-button @click="dialogVisible = false">{{$t('message.取消')}}</el-button>
+        <el-button type="primary" @click="getHl">{{$t('message.确定')}}</el-button>
     </span>
     </el-dialog>
     
@@ -130,13 +130,13 @@ export default {
           console.log(res);
           if(res.code == 0) {
               this.$refs.upload.clearFiles();
-              this.$message.success("文件生成成功！！！");
+              this.$message.success(this.$t('message.文件生成成功！！！'));
               this.fileList = [];
               this.formData = new FormData();
               this.loading = false;
               window.open(res.data,'_blank')
           }else{
-            this.$message.error("生成失败，请重新上传！");
+            this.$message.error(this.$t('message.生成失败，请重新上传！'));
             this.formData = new FormData();
             this.$refs.upload.clearFiles();
             this.fileList = [];
@@ -144,7 +144,7 @@ export default {
           }
         })
       } else {
-        this.$message.error("上传文件不能为空");
+        this.$message.error(this.$t('message.上传文件不能为空'));
         this.fileList = [];
       }
     },
@@ -166,7 +166,7 @@ export default {
      getHl(){
          if(this.userId == '') {
              this.$message({
-                message: '请选择客户！',
+                message: this.$t('message.请选择客户！'),
                 type: 'warning'
             });
              return
@@ -178,14 +178,14 @@ export default {
              console.log(res)
              if(res.code == 0) {
                   this.$message({
-                        message: '生成成功！',
+                        message:this.$t('message.生成成功！') ,
                         type: 'success'
                     });
                 window.open(res.data,'_blank');
 
             }else {
                  this.$message({
-                    message: '获取失败！',
+                    message:this.$t('message.获取失败！') ,
                     type: 'warning'
                 });
                 // this.$confirm(`请确定上传文件是否正确？`); 
