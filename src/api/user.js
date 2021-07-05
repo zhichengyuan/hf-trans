@@ -76,7 +76,7 @@ export function updataUser(data) {
 }
 export function save(data) {
     return request({
-        url: '/user/save',
+        url: '/api/user/save',
         method: 'post',
         data
     })
