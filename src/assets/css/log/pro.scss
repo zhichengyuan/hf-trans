@@ -1,0 +1,48 @@
+@media screen and(min-width: 960px) and (max-width: 1199px) {
+    .container {
+        width: 900px;
+        margin: 0 auto;
+        padding:50px 0;
+        .title {
+            font-weight: 900;
+            font-size: 44px;
+            padding-bottom: 25px;
+            color: black;
+        }
+        .demo-ruleForm{
+            .el-form-item__label{
+                font-size: 22px;
+            }
+            .el-input{
+                width: 50%;
+                height: 160px;
+                
+            }
+            .el-input__inner{
+                height: 100%;
+            }
+            .el-button--primary {
+                margin-left: 20px;
+            }
+        }
+        .container .demo-ruleForm .el-form-item__label{
+            width: 100% !important;
+            /* display: block !important; */
+            text-align: left !important;
+        }
+        .container .demo-ruleForm .el-form-item__content{
+            margin-left: 0px !important;
+            width: 100% !important;
+        }
+        .container .demo-ruleForm .el-input{
+            width: 100% !important;
+            
+        }
+        .container .demo-ruleForm .el-button--primary{
+            margin-left: 0px !important;
+            margin-top: 10px;
+        }
+       
+    }
+   
+}

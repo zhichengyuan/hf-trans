@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+   <div class="container" id="page">
       <div id="header">
         <div id="logo">
           <h1 class="title">{{ $t("message.物流查询") }}</h1>
@@ -16,11 +16,11 @@
           >
             <el-form-item :label=" $t('message.物流编号')"  >
               <el-input
-              type="textarea"
+              
                 v-model="logNumForm.logNum"
               ></el-input>
               <el-button
-              style="margin-top:30px"
+              
                 type="primary"
                 @click="submitForm(logNumForm)"
                 >{{  $t("message.确定") }}</el-button
@@ -95,8 +95,9 @@ export default {
 </script>
 
 <style lang="scss" >
-.logShow {
-    margin: 0 auto;
-    width: 90%;
-}
+@import "@/assets/css/log/pc.scss";
+@import "@/assets/css/log/pro.scss";
+@import "@/assets/css/log/ipad.scss";
+@import "@/assets/css/log/phone.scss";
+@import "@/assets/css/log/mini.scss";
 </style>

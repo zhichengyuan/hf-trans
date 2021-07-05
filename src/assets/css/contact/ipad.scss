@@ -1,0 +1,83 @@
+@media screen and(min-width: 768px) and (max-width: 959px) {
+    .contect {
+        width: 700px;
+        margin: 0 auto;
+
+        .content-block {
+            color: #424242;
+            display: flex;
+
+            .left-info {
+                margin-right: 80px;
+
+                .title {
+                    font-weight: 900;
+                    font-size: 44px;
+                    padding-bottom: 25px;
+                }
+
+                .desc {
+                    color: #767676;
+                    max-width: 590px;
+                    margin-bottom: 32px;
+                }
+            }
+
+            .right-info {
+                // flex-grow: 999;
+                width: 50%;
+                .input {
+                    margin-bottom: 24px;
+                    width: 100%;
+
+                    .title {
+                        font-weight: 500;
+                        font-size: 16px;
+                        margin-bottom: 24px;
+                    }
+
+                    input {
+                        border: 0;
+                        border-bottom: 1px solid #979797;
+                        max-width: 360px;
+                        width: 100%;
+                        padding: 0 0 12px 0;
+                        font-size: 14px;
+                    }
+
+                    textarea {
+                        border: 1px solid #979797;
+                        border-radius: 5px;
+                        max-width: 360px;
+                        width: 100%;
+                        resize: none;
+                        height: 90px;
+                        padding: 12px;
+                        font-size: 14px;
+                    }
+
+                }
+
+                .btn {
+                    width: 100%;
+                    margin-top: 32px;
+                    max-width: 360px;
+
+                    .btn-submit {
+                        width: 100%;
+                        margin: 0 auto;
+                        height: 40px;
+                        background: #6FC16D;
+                        border-radius: 5px;
+                        color: #ffffff;
+                        font-weight: 500;
+                        font-size: 16px;
+                        text-align: center;
+                        padding: 9px 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

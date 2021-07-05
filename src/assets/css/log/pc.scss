@@ -1,0 +1,30 @@
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 1170px;
+        margin: 0 auto;
+        padding:50px 0;
+        .title {
+            font-weight: 900;
+            font-size: 44px;
+            padding-bottom: 25px;
+            color: black;
+        }
+        .demo-ruleForm{
+            .el-form-item__label{
+                font-size: 22px;
+            }
+            .el-input{
+                width: 50%;
+                height: 160px;
+                
+            }
+            .el-input__inner{
+                height: 100%;
+            }
+            .el-button--primary {
+                margin-left: 20px;
+            }
+        }
+       
+    }
+}

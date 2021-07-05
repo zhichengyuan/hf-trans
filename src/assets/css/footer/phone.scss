@@ -1,0 +1,98 @@
+@media screen and(min-width: 480px) and (max-width: 767px) {
+    .footer {
+        margin-top: 100px;
+        word-spacing: normal;
+        color: #666666;
+        box-sizing: border-box;
+        background-color: #e5a6ec78;
+        background-image: url('~@/assets/img/footer.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+
+        .feedback-container {
+            position: relative;
+            max-width: 1300px;
+            
+            .part {
+                width: 100%;
+                .column {
+                    width: 100%;
+                }
+                .Logo {
+                    margin-left: 10%;
+                    width: 200px;
+                    height: 50px;
+                    margin-top: 50px;
+                    background-image: url('~@/assets/img/logo.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 100% 100%;
+                }
+
+                .contact {
+                    width: 100%;
+                    position: relative;
+                    min-height: 1px;
+                    display: flex;
+                    position: relative;
+
+                    .item-group {
+                        width: 100%;
+                        padding:15px 30px;
+
+                        div {
+                            font-size: 18px;
+                            font-weight: 500;
+
+                            a {
+                                display: inline-block;
+                                width: 100%;
+                                // padding: 15px 0;
+                            }
+                        }
+                    }
+                }
+
+                .companyInfo {
+                    width: 100%;
+                    position: relative;
+                    min-height: 1px;
+                    display: flex;
+
+                    .info-wrap {
+                        width: 100%;
+                        padding:15px 30px;
+
+                        .item-info {
+                            padding: 15px 0;
+                            .content {}
+
+                            .title {
+                                color: #aaaaaa;
+                                font-size: 14px;
+                                font-weight: 300;
+                                line-height: 1.5em;
+                            }
+                        }
+                    }
+                }
+            }
+            .notic{
+                
+                display: flex;
+                margin-top: 10px;
+                border-top: 1px solid #b5b5b5;
+                font-size: 16px;
+                justify-content: space-between;
+                margin: 0 20px;
+                div{
+                    // flex: 1;
+                    padding:10px 0;
+                    
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+@media screen and (min-width: 1200px) {
+
+    .clearfix:after,
+    .clearfix:before {
+        content: "";
+        display: table;
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .clearfix {
+        *zoom: 1;
+    }
+.backuse{
+    width: 100%;
+    // background-color: #63f96140;
+    background-color: #dfdfdf;
+    
+    
+    .use {
+        padding: 70px 0;
+        width: 1170px;
+        margin: 0 auto 120px;
+        // display: flex;
+        color: #424242;
+
+        
+
+        .use-group {
+            position: relative;
+
+        }
+
+
+    }
+}
+    
+}
