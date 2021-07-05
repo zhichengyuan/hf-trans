@@ -1,0 +1,49 @@
+
+@media screen and (max-width: 479px) {
+    .business{
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px 0;
+        color: #424242;
+           .section-headline{
+            margin-bottom: 24px;
+            font-weight: 900;
+        font-size: 24px;
+        // color: #424242;
+           }
+           .business-group{
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 15px;
+            column-gap: 15px;
+               .group-block{
+                padding-bottom: 50px;
+                   img{
+                    width: 100%;
+                    height: 180px;
+                    margin-bottom: 35px;
+                    border-radius: 15px;
+                    background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+                   }
+                   .business-title{
+                    font-weight: 700;
+                    font-size: 16px;
+                    margin-bottom: 16px;
+                       span{
+    
+                       }
+                   }
+                   .business-desc{
+                    font-size: 14px;
+                    color: #767676;
+                    font-family: flqd-n7, adobe-notdef;
+                    font-style: normal;
+                        span{
+    
+                        }
+                   }
+               }
+           }
+       }
+}

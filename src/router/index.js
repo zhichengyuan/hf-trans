@@ -43,9 +43,9 @@ import execlOperateRouter from './modules/execlOperate'
 export const constantRoutes = [
     
     {
-        path: '/log',
+        path: '/home',
         component: () =>
-            import ('@/views/logQuery/index'),
+            import ('@/views/Home/index'),
         hidden: true
     },
     {
