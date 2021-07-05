@@ -7,6 +7,7 @@ import i18n from '@/i18n/i18n'
 import Layout from '@/layout'
 
 /* Router Modules */
+import logQuaryRouter from './modules/logQuary'
 import consigneeRouter from './modules/consignee'
 import transOrderRouter from './modules/transOrder'
 import staffRouter from './modules/staff'
@@ -41,7 +42,12 @@ import execlOperateRouter from './modules/execlOperate'
  */
 export const constantRoutes = [
     
-   
+    {
+        path: '/log',
+        component: () =>
+            import ('@/views/logQuery/index'),
+        hidden: true
+    },
     {
         path: '/login',
         component: () =>
@@ -93,6 +99,7 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
+    logQuaryRouter,
     staffRouter,
     consigneeRouter,
     transOrderRouter,
