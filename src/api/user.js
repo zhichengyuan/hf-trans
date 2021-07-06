@@ -1,5 +1,34 @@
 import request from '@/utils/request'
 
+// group/save group/list  group/edit
+
+
+
+//修改人员组
+export function editGroup(data) {
+    return request({
+        url: '/api/group/edit',
+        method: 'post',
+        data
+    })
+}
+
+//添加人员组
+export function addGroup(data) {
+    return request({
+        url: '/api/group/save',
+        method: 'post',
+        data
+    })
+}
+//获取人员组列表
+export function getGroupList(data) {
+    return request({
+        url: '/api/group/list',
+        method: 'post',
+        data
+    })
+}
 export function listuser(data) {
     return request({
         url: '/api/user/list',
@@ -60,20 +89,22 @@ export function logout() {
     // })
 }
 
-
-
-
-
-
-
-
 export function updataUser(data) {
     return request({
-        url: '/user/changesec',
+        url: '/api/user/edit',
         method: 'post',
         data
     })
 }
+
+
+
+
+
+
+
+
+
 export function save(data) {
     return request({
         url: '/api/user/save',

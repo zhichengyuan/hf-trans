@@ -35,9 +35,9 @@
             <el-dropdown-item divided @click.native="logout">
               <span style="display:block;">{{$t('message.Log Out')}}</span>
             </el-dropdown-item>
-            <!-- <el-dropdown-item divided @click.native="editPassword">
+            <el-dropdown-item divided @click.native="editPassword">
               <span style="display:block;" >修改密码</span>
-            </el-dropdown-item> -->
+            </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
     </div>

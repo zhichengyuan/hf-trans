@@ -10,7 +10,7 @@ const staffRouter = {
   meta: {
     title:i18n.t('message.人员管理'),
     icon: 'chart',
-    roles: ['admin','B']
+    roles: ['admin','B','b']
   },
   children: [{
       path: 'staffM',
@@ -21,6 +21,16 @@ const staffRouter = {
         title:i18n.t('message.人员列表'),
         noCache: true,
         roles: ['admin','B']
+      }
+    },{
+      path: 'staffGroup',
+      component: () =>
+        import('@/views/staff/group'),
+      name: 'staffGroup',
+      meta: {
+        title:i18n.t('message.人员组'),
+        noCache: true,
+        roles: ['admin','B','b']
       }
     },
   ]

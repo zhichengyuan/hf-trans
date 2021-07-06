@@ -154,7 +154,7 @@
           </el-form-item>
         </div>
         <el-form-item  :label="$t('message.角色')" prop="roles">
-          <el-select :multiple-limit='1' clearable multiple v-model="changeTemp.roles" @change="selectChange" :placeholder="$t('message.请选择')">
+          <el-select :multiple-limit='1' clearable multiple v-model="changeTemp.roles" :placeholder="$t('message.请选择')">
             <el-option
               v-for="(item, index) in rolesOptionsList"
               :key="index"
@@ -256,7 +256,7 @@
 </template>
 
 <script>
-import { listuser, save as saveuser,  } from '@/api/user'
+import { listuser, save as saveuser } from '@/api/user'
 import { parseTime } from '@/utils'
 import Pagination from '@/components/Pagination'
 export default {
@@ -284,7 +284,7 @@ export default {
         { title: this.$t('message.激活'), val: 'active' },
         { title: this.$t('message.禁用'), val: 'disactive' },
       ],
-
+      groupList:[],
       userlist: null,
       storelist: null,
       total: 0,
@@ -393,9 +393,8 @@ export default {
   },
 
   methods: {
-    selectChange(value) {
-      console.log(value);
-    },
+   
+    
     isDel(row){
       this.delInfo = row
       this.centerDialogVisible = true

@@ -81,7 +81,7 @@
           prop="recerCity"
         ></el-table-column>
         <el-table-column
-          :label="$t('message.街道')"
+          :label="$t('message.地址')"
           prop="recerAddr"
         ></el-table-column>
         <el-table-column
@@ -89,6 +89,13 @@
           prop="recerZipCode"
         ></el-table-column>
         
+        <el-table-column
+        :label="$t('message.人员组')"
+        width="100">
+        <template slot-scope="scope">
+            <span>{{groupName(scope.row.groupId)}}</span>
+        </template>
+        </el-table-column>
         <el-table-column
         fixed="right"
         :label="$t('message.操作')"
@@ -156,8 +163,21 @@
                 <el-form-item :label="$t('message.城市')"  prop="recerCity">
                     <el-input v-model="consignee.recerCity"></el-input>
                 </el-form-item>
-                <el-form-item :label="$t('message.街道')"  prop="recerAddr">
+                <el-form-item :label="$t('message.地址')"  prop="recerAddr">
                     <el-input v-model="consignee.recerAddr"></el-input>
+                </el-form-item>
+                <el-form-item :label="$t('message.人员组')"  prop="groupId">
+                    <el-select
+                      v-model="consignee.groupId"
+                      :placeholder="$t('message.请选择')"
+                    >
+                      <el-option
+                        v-for="(item, index) in groupList"
+                        :key="index"
+                        :label="item.name"
+                        :value="item._id"
+                      ></el-option>
+                    </el-select>
                 </el-form-item>
                 <el-form-item :label="$t('message.邮编')"  prop="recerZipCode">
                     <el-input v-model="consignee.recerZipCode"></el-input>
@@ -187,7 +207,7 @@
 </template>
 
 <script>
-import {saveCustom,getConsignee } from '@/api/user'
+import {saveCustom,getConsignee,getGroupList } from '@/api/user'
 import Pagination from '@/components/Pagination'
 import { ImgUrl } from '@/api/upload'
 export default {
@@ -214,6 +234,7 @@ export default {
       },
       listLoading: true,
       list: [],
+      groupList:[],
       formLabelWidth: '120px',
       dialogVisible: false,
       dialogVisible1: false,
@@ -232,7 +253,8 @@ export default {
         PassPortType:'',//护照类型
         passPortDate:"",//签发日期
         birthday:'',//生日
-        eni:''//税号，
+        eni:'',//税号，
+        groupId:''
       },
     rules: {
         recerNamePart1: [
@@ -280,9 +302,24 @@ export default {
     }
   },
   created() {
-    this.getConsignee()
+    this.createdFun();
+    // this.fetchGroupList();
+    // this.getConsignee();
   },
   methods: {
+    async createdFun(){
+      await this.fetchGroupList();
+      await this.getConsignee();
+    },
+    //获取人员组
+    async fetchGroupList() {
+      let data = {
+        req:{}
+      }
+      await getGroupList(data).then((response) => {
+        this.groupList = response.data.items;
+      })
+    },
       //新增收货人
       addConsignee(){
           this.consignee = {
@@ -300,7 +337,8 @@ export default {
             PassPortType:'',//护照类型
             passPortDate:"",//签发日期
             birthday:'',//生日
-            eni:''//税号，
+            eni:'',//税号，
+            groupId:'',
         }
       },
         //  保存收获人
@@ -344,8 +382,8 @@ export default {
           this.dialogVisible = true;
       },
       //获取收货人列表
-    getConsignee(){
-        getConsignee(this.listQuery).then(res => {
+    async getConsignee(){
+        await getConsignee(this.listQuery).then(res => {
             this.list = res.data.items
             this.total = res.data.total
         })
@@ -357,8 +395,13 @@ export default {
       return ImgUrl(imgid)
     },
     
-    indexMethod(index) {
-      return index++ + 1
+    groupName(groupId) {
+      if(groupId) {
+        let arr = this.groupList.find((e,i) => e._id === groupId);
+        return arr.name
+      }else {
+        return ''
+      }
     },
   },
 }

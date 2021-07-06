@@ -11,7 +11,22 @@
       <el-form-item :label="$t('message.运单编号')" prop="tsCode">
         <el-input v-model="ruleForm.tsCode"></el-input>
       </el-form-item>
-
+      
+      <el-form-item :label="$t('message.人员组')" prop="groupId">
+        <el-select
+          clearable
+          v-model="groupId"
+          @change="groupChange"
+          :placeholder="$t('message.请选择')"
+        >
+          <el-option
+            v-for="(item, index) in groupList"
+            :key="index"
+            :label="item.name"
+            :value="item._id"
+          ></el-option>
+        </el-select>
+      </el-form-item>
       <el-form-item :label="$t('message.收货人')" prop="recid">
         <el-select
           v-model="ruleForm.recid"
@@ -170,7 +185,7 @@
 </template>
 
 <script>
-import { getConsignee } from '@/api/user'
+import { getConsignee,getGroupList } from '@/api/user'
 import { isNumber } from '@/utils/index'
 import { transOderSave, getProductName } from '@/api/order'
 export default {
@@ -180,10 +195,21 @@ export default {
       dialogVisible: false,
       consigneeList: [],
       getProductNameList: [],
+      groupId:"",
       ruleForm: {
         tsCode: '', //运单号
-        goods: [], //商品列表
+        goods: [
+          {url: '', //url
+        goodsWight: '', //单个物品重量
+        customsCode: '', //海关商品编码
+        goodsNameCN: '', //商品中文名
+        goodsNameRU: '', //商品俄文名
+        orderCode: '', //订单号
+        goodsPriceRMB: '', //sku价格
+        goodsName: '',}
+        ], //商品列表
       },
+      groupList:[],
       rules: {
         tsCode: [
           { required: true, message:this.$t('message.请输入运单编号') , trigger: 'blur' },
@@ -204,8 +230,22 @@ export default {
   created() {
     this.getConsignee()
     this.getProductName()
+    this.fetchGroupList()
   },
   methods: {
+    groupChange(val){
+      console.log(val);
+      this.getConsignee(val);
+    },
+    //获取人员组
+    async fetchGroupList() {
+      let data = {
+        req:{}
+      }
+      await getGroupList(data).then((response) => {
+        this.groupList = response.data.items;
+      })
+    },
     //获取品名
     changeGoodsName(val, index) {
       console.log(val, index)
@@ -222,16 +262,15 @@ export default {
       })
     },
     //获取收货人
-    getConsignee() {
+    getConsignee(groupId) {
       let listQuery = {
         req: {
           parent: this.$store.state.user.companyMsg._id,
         },
-        paging: {
-          page: 1,
-          limit: 1000,
-        },
         sort: '+id',
+      }
+      if(groupId) {
+        listQuery.req.groupId = groupId
       }
       getConsignee(listQuery).then((res) => {
         console.log(res)
